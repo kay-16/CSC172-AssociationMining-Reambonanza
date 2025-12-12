@@ -40,7 +40,7 @@ Therefore, this project addresses this challenge by employing Association Rule M
 | 6 | Evaluation & Filtering | Calculate Lift, Conviction, and Leverage. Filter for rules where Lift $>$ 1.0 (positive correlation). |
 | 7 | Final Output | Ranked list of comorbidity rules and network graph visualization. |
 
-- Model: Apriori Algorithm
+- Technique: Apriori Algorithm
 - Framework: Python (libraries to be used: Pandas, mixtend for ARM, Matplotlib/Seaborn/networkx for EDA/visualisation)
 - Hardware: Jupyter Notebook
 

@@ -32,17 +32,11 @@ Therefore, this project addresses this challenge by employing Association Rule M
 | Step | Action | Description |
 | :---: | :--- | :--- |
 | 1 | Input Data | Raw patient records from the Cleveland dataset. |
-| ↓ | | |
 | 2 | Preprocessing | Discretization (e.g., Age into bins, Cholesterol into High/Normal) and One-Hot Encoding to create a binary transactional format. |
-| ↓ | | |
 | 3 | Transactional Data | Output: Sparse DataFrame (each column is a specific medical feature/risk level). |
-| ↓ | | |
 | 4 | Apriori Algorithm | Find Frequent Itemsets using a tuned minimum Support threshold. |
-| ↓ | | |
 | 5 | Rule Generation | Generate rules (A $\implies$ B) based on a minimum Confidence threshold. |
-| ↓ | | |
 | 6 | Evaluation & Filtering | Calculate Lift, Conviction, and Leverage. Filter for rules where Lift $>$ 1.0 (positive correlation). |
-| ↓ | | |
 | 7 | Final Output | Ranked list of comorbidity rules and network graph visualization. |
 
 - Model: Apriori Algorithm

@@ -1,4 +1,4 @@
-# [Project Title: e.g., Real-Time Object Detection for Waste Sorting]
+# Association Rule Mining for Cardiovascular Comorbidity and Risk Factor Assessment
 **CSC172 Data Mining Final Project**  
 *Mindanao State University - Iligan Institute of Technology*  
 **Student:** Kyla Reambonanza, 2022-1465  

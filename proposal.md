@@ -22,12 +22,12 @@ Therefore, this project addresses this challenge by employing Association Rule M
 - Expected size: ~303 instances using the standard subset of 13 features
 
 - Classes: 
+- Item 1 (Presence): Outcome: Disease (Value 1 or $\ge 1$) - - Item 2 (Absence): Outcome: No Disease (Value 0)
 
 - Acquisition: Download the Cleveland databas subset from UCI repository
 
 ## 5. Technical Approach
 - Architecture sketch
-
 
 | Step | Action | Description |
 | :---: | :--- | :--- |

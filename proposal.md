@@ -14,16 +14,14 @@ Therefore, this project addresses this challenge by employing Association Rule M
 ## 3. Objectives
 - Implement the Apriori Algorithm to effectively determine frequent itemsets and generate strong association rules for comorbidity patterns.
 
-- Implement complete training pipeline including data preprocessing, model training, validation, and evaluation.
+- Implement complete association rule mining including data preprocessing, frequent itemset mining, rule generation, parameter tuning, and evaluation.
 
 ## 4. Dataset Plan
-- Source: UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X.
+- Source: Kaggle Key Indicators of Heart Disease - https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease/
 
-- Expected size: ~303 instances using the standard subset of 13 features
+- Expected size: ~319,000 records
 
-- Classes: 
-1. Item 1 (Presence): Outcome: Disease (Value 1 or $\ge 1$) 
-2. Item 2 (Absence): Outcome: No Disease (Value 0)
+- Outcome Variables: {Smoking_Yes, Obese, Diabetes_Yes} ⇒ {HeartDisease_Yes}
 
 - Acquisition: Download the Cleveland databas subset from UCI repository
 
@@ -38,7 +36,7 @@ Therefore, this project addresses this challenge by employing Association Rule M
 | 4 | Apriori Algorithm | Find Frequent Itemsets using a tuned minimum Support threshold. |
 | 5 | Rule Generation | Generate rules (A $\implies$ B) based on a minimum Confidence threshold. |
 | 6 | Evaluation & Filtering | Calculate Lift, Conviction, and Leverage. Filter for rules where Lift $>$ 1.0 (positive correlation). |
-| 7 | Final Output | Ranked list of comorbidity rules and network graph visualization. |
+| 7 | Final Output | Ranked list of comorbidity rules, network graph visualization, item frequency bar charts, transaction length distribution, and co-occurrence heatmap |
 
 - Technique: Apriori Algorithm
 - Framework: Python (libraries to be used: Pandas, mixtend for ARM, Matplotlib/Seaborn/networkx for EDA/visualisation)

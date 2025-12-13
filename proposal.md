@@ -7,9 +7,9 @@
 Association Rule Mining for Cardiovascular Comorbidity and Risk Factor Assessment
 
 ## 2. Problem Statement
-According to the World Health Organisation (WHO), cardivascular diseases (CVDs) are the leading cause of death worldwide in fact, an estimated 19.8 million (~32%) people died from CVD in 2022 alone. However, risk factors rarely occur independently, and their combined presence could intensify the overall risk. Healthcare systems frequently depends on traditional statistical models that concentrate on single predictors instead of explicit, quantitative modelling of various and complex interactions. 
+According to the World Health Organisation (WHO), cardiovascular diseases (CVDs) are the leading cause of death worldwide; in fact, an estimated 19.8 million (~32%) people died from CVD in 2022 alone. However, risk factors rarely occur independently, and their combined presence could intensify the overall risk. Healthcare systems frequently depend on traditional statistical models that concentrate on single predictors instead of explicit, quantitative modelling of various and complex interactions. 
 
-Therefore, this project addresses this challenge by employing Association Rule Mining (ARM) and investigate hidden rules (comorbidities) that relates to combinations of symptoms and risk factors (e.g., Age, Cholesterol) relating to heart disease. The resulting rules will then represent as a data-driven tool to aid medical experts determine high-risk patient profiles and patient-specific treatment plans.
+Therefore, this project addresses this challenge by employing Association Rule Mining (ARM) and investigate hidden rules (comorbidities) that relates to combinations of symptoms and risk factors (e.g., AgeCategory, BMI, SleepTime) relating to heart disease. The resulting rules will then represent as a data-driven tool to aid medical experts determine high-risk patient profiles and patient-specific treatment plans.
 
 ## 3. Objectives
 - Implement the Apriori Algorithm to effectively determine frequent itemsets and generate strong association rules for comorbidity patterns.
@@ -21,17 +21,17 @@ Therefore, this project addresses this challenge by employing Association Rule M
 
 - Expected size: ~319,000 records
 
-- Outcome Variables: {Smoking_Yes, Obese, Diabetes_Yes} ⇒ {HeartDisease_Yes}
+- Example Rule Pattern: {Smoking_Yes, Obese, Diabetes_Yes} ⇒ {HeartDisease_Yes}
 
-- Acquisition: Download the Cleveland databas subset from UCI repository
+- Acquisition: Download the dataset from Kaggle in CSV format.
 
 ## 5. Technical Approach
 - Architecture sketch
 
 | Step | Action | Description |
 | :---: | :--- | :--- |
-| 1 | Input Data | Raw patient records from the Cleveland dataset. |
-| 2 | Preprocessing | Discretization (e.g., Age into bins, Cholesterol into High/Normal) and One-Hot Encoding to create a binary transactional format. |
+| 1 | Input Data | Raw patient records from the CDC BRFSS heart disease dataset (Kaggle). |
+| 2 | Preprocessing | Discretization and one-hot encoding (e.g., AgeCategory, BMI into Obese/Non-Obese, SleepTime into Short/Normal/Long) |
 | 3 | Transactional Data | Output: Sparse DataFrame (each column is a specific medical feature/risk level). |
 | 4 | Apriori Algorithm | Find Frequent Itemsets using a tuned minimum Support threshold. |
 | 5 | Rule Generation | Generate rules (A $\implies$ B) based on a minimum Confidence threshold. |
@@ -54,4 +54,4 @@ Therefore, this project addresses this challenge by employing Association Rule M
 ## References
 - World Health Organization (WHO), 2025. From: https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)
 
-- Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). Heart Disease [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X.
+- Indicators of Heart Disease (2022 UPDATE) From: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease/

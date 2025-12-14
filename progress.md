@@ -33,18 +33,22 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
 This section tracks the metrics used to tune the Apriori algorithm.
 
 **Current Parameters Tested:**
-| Parameter | Value 1 | Value 2 |
-| :--- | :--- | :--- |
-| **Min Support** | [e.g., 0.05 (5%)] | [e.g., 0.01 (1%)] |
-| **Min Confidence** | [e.g., 0.60 (60%)] | [e.g., 0.75 (75%)] |
-| **Min Lift** | [e.g., 1.0] | [e.g., 1.2] |
+| Parameter          | Value 1    | Value 2    |
+| :----------------- | :--------- | :--------- |
+| **Min Support**    | 0.10 (10%) | 0.05 (5%)  |
+| **Min Confidence** | 0.70 (70%) | 0.60 (60%) |
+| **Min Lift**       | 1.0        | 1.2        |
+
 
 **Sample Rule Metrics (Top 5 High-Lift Rules):**
-| Rule (Antecedent $\implies$ Consequent) | Support | Confidence | **Lift** |
-| :--- | :--- | :--- | :--- |
-| [e.g., $\{\text{Age\_Senior}\} \implies \{\text{Outcome: Disease}\}$] | [e.g., 0.15] | [e.g., 0.85] | [e.g., 2.15] |
-| [e.g., $\{\text{Chol\_High}\} \implies \{\text{Thal\_Fixed Defect}\}$] | [e.g., 0.08] | [e.g., 0.72] | [e.g., 1.88] |
-| ... | ... | ... | ... |
+| Rule (Antecedent $\implies$ Consequent)                                                        | Support | Confidence | **Lift** |
+| :--------------------------------------------------------------------------------------------- | :------ | :--------- | :------- |
+| ${\text{GenHealth_Excellent}} \implies {\text{Diabetic_No, PhysicalHealth_cat_None}}$          | 0.177   | 0.846      | 1.372    |
+| ${\text{GenHealth_Excellent}} \implies {\text{PhysicalActivity_Yes, PhysicalHealth_cat_None}}$ | 0.165   | 0.788      | 1.363    |
+| ${\text{GenHealth_Excellent}} \implies {\text{DiffWalking_No, PhysicalHealth_cat_None}}$       | 0.182   | 0.871      | 1.324    |
+| ${\text{GenHealth_Excellent}} \implies {\text{HeartDisease_No, PhysicalHealth_cat_None}}$      | 0.181   | 0.868      | 1.309    |
+| ${\text{GenHealth_Excellent}} \implies {\text{Diabetic_No, MentalHealth_cat_None}}$            | 0.147   | 0.704      | 1.301    |
+
 
 **Visualization (Required for Deliverable 3):**
 *Replace the placeholder below with your actual plot image, saved in your repository.*

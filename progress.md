@@ -54,7 +54,7 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | Issue | Status | Resolution |
 | :--- | :--- | :--- |
 | Bin boundary selection | ✅ Fixed | Justified the use of standard medical cutoffs (e.g., BMI $>31$ for Obese) after researching medical guidelines. |
-| Github declines too large CSV file for preprocessed data | ✅ Fixed | Added the CSV file to gitignore file and will then use alternative storage to store the file (i.e., Google Drive) |
+| Github declines too large CSV file for preprocessed data | ✅ Fixed | Removed all large file in commit history then,added the CSV file to gitignore file; Use alternative storage to store the file (i.e., Google Drive) |
 | Generating too many rules | ⏳ Planned | Will implement post-filtering, requiring Lift $\ge 1.2$ before final reporting. |
 
 ## 4. Next Steps (Before Final Submission)

@@ -40,15 +40,14 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | **Min Lift**       | 1.0        | 1.2        |
 
 
-**Sample Rule Metrics (Top 5 High-Lift Rules):**
-| Rule (Antecedent $\implies$ Consequent)                                                        | Support | Confidence | **Lift** |
-| :--------------------------------------------------------------------------------------------- | :------ | :--------- | :------- |
-| ${\text{GenHealth_Excellent}} \implies {\text{Diabetic_No, PhysicalHealth_cat_None}}$          | 0.177   | 0.846      | 1.372    |
-| ${\text{GenHealth_Excellent}} \implies {\text{PhysicalActivity_Yes, PhysicalHealth_cat_None}}$ | 0.165   | 0.788      | 1.363    |
-| ${\text{GenHealth_Excellent}} \implies {\text{DiffWalking_No, PhysicalHealth_cat_None}}$       | 0.182   | 0.871      | 1.324    |
-| ${\text{GenHealth_Excellent}} \implies {\text{HeartDisease_No, PhysicalHealth_cat_None}}$      | 0.181   | 0.868      | 1.309    |
-| ${\text{GenHealth_Excellent}} \implies {\text{Diabetic_No, MentalHealth_cat_None}}$            | 0.147   | 0.704      | 1.301    |
-
+**Sample Rule Metrics (Top 5 High-Lift Rules using Parameter Value 1):**
+| Rule (Antecedent => Consequent) | Support | Confidence | Lift |
+|---------------------------------|---------|------------|------|
+| GenHealth\_Excellent => Diabetic\_No, PhysicalHealth\_cat\_None | 0.177 | 0.846 | 1.372 |
+| GenHealth\_Excellent => PhysicalActivity\_Yes, PhysicalHealth\_cat\_None | 0.165 | 0.788 | 1.363 |
+| GenHealth\_Excellent => DiffWalking\_No, PhysicalHealth\_cat\_None | 0.182 | 0.871 | 1.324 |
+| GenHealth\_Excellent => HeartDisease\_No, PhysicalHealth\_cat\_None | 0.181 | 0.868 | 1.309 |
+| GenHealth\_Excellent => Diabetic\_No, MentalHealth\_cat\_None | 0.147 | 0.704 | 1.301 |
 
 **Visualization (Required for Deliverable 3):**
 *Replace the placeholder below with your actual plot image, saved in your repository.*

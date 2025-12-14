@@ -58,7 +58,7 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | Generating too many rules | ⏳ Planned | Will implement post-filtering, requiring Lift $\ge 1.2$ before final reporting. |
 
 ## 4. Next Steps (Before Final Submission)
-- [ ] Complete final One-Hot Encoding and transactional file creation.
+- [✓] Complete final One-Hot Encoding and transactional file creation.
 - [ ] Execute Apriori algorithm and generate initial ruleset.
 - [ ] Calculate all required metrics: Support, Confidence, Lift, Conviction, and Leverage.
 - [ ] **Critical:** Filter rules to only show those where the consequent is `Outcome: Disease` or `Outcome: No Disease`.

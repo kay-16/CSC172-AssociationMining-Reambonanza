@@ -18,7 +18,7 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
 * **Source Dataset:** Heart Disease Dataset (Kaggle)
 * **Total Records (Transactions):** 319,795 records
 * **Total Items (Features) Before Encoding:** 18 original columns
-* **Total Items (Features) After Encoding:** 64 total binary items (columns)
+* **Total Items (Features) After Encoding:** 61 total binary items (columns)
 * **Key Items Implemented:** `Discretization of continuous health variables for association rule mining.`, `Construction of a transactional sparse matrix using one-hot encoding`
 * **Preprocessing Applied:**
     * Missing values imputed/dropped (documented in preprocessing notebook).

@@ -10,8 +10,8 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
 | :--- | :--- | :--- |
 | Data Loading & Cleaning | ✅ Completed | Missing values handled (documented in Preprocessing Notebook). |
 | Data Preprocessing | ✅ Completed | Binning/Discretization of numerical features completed for BMI, PhysicalHealth, MentalHealth, and SleepTime columns. |
-| **Transactional Conversion** | ⏳ On-going | Final One-Hot Encoding and conversion to sparse matrix format. |
-| **Apriori Execution** | ⏳ Not Started | Ready to run the algorithm once the transactional file is complete. |
+| **Transactional Conversion** | ✅ Completed | Final One-Hot Encoding and conversion to sparse matrix format. |
+| **Apriori Execution** | ✅ Completed | Ready to run the algorithm once the transactional file is complete. |
 | Rule Evaluation & Filtering | ⏳ Not Started | Planned to start after generating the initial ruleset. |
 
 ## 1. Dataset Progress

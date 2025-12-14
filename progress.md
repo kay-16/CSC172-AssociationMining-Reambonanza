@@ -1,6 +1,6 @@
 # CSC172 Association Mining Project Progress Report
 **Student:** Kyla Reambonanza, 2022-1465  
-**Date:** [Progress Submission Date]  
+**Date:** December 16, 2025  
 **Repository:** https://github.com/kay-16/CSC172-AssociationMining-Reambonanza.git
 
 ## 📊 Current Status
@@ -55,11 +55,13 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | :--- | :--- | :--- |
 | Bin boundary selection | ✅ Fixed | Justified the use of standard medical cutoffs (e.g., BMI $>31$ for Obese) after researching medical guidelines. |
 | Github declines too large CSV file for preprocessed data | ✅ Fixed | Removed all large file in commit history then,added the CSV file to gitignore file; Use alternative storage to store the file (i.e., Google Drive) |
+| Generating too many rules / memory limitations with Apriori | ✅ Fixed | Switched to FPGrowth to reduce memory usage; post-filtered itemsets and rules (e.g., removed trivial 1-itemsets, applied Lift $\ge 1.2$) before reporting. |
+| Preprocessing: too many features / high dimensionality | ✅ Fixed | Applied **pruning** during preprocessing by removing irrelevant or redundant columns to reduce dimensionality before mining. |
 | Generating too many rules | ⏳ Planned | Will implement post-filtering, requiring Lift $\ge 1.2$ before final reporting. |
 
 ## 4. Next Steps (Before Final Submission)
 - [✓] Complete final One-Hot Encoding and transactional file creation.
-- [ ] Execute Apriori algorithm and generate initial ruleset.
+- [✓] Execute Apriori algorithm and generate initial ruleset.
 - [ ] Calculate all required metrics: Support, Confidence, Lift, Conviction, and Leverage.
 - [ ] **Critical:** Filter rules to only show those where the consequent is `Outcome: Disease` or `Outcome: No Disease`.
 - [ ] Prepare final visualizations (Rule Network Graph, Heatmaps).

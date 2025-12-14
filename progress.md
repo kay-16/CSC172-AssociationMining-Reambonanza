@@ -16,7 +16,7 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
 
 ## 1. Dataset Progress
 * **Source Dataset:** Heart Disease Dataset (Kaggle)
-* **Total Records (Transactions):** 319795 records
+* **Total Records (Transactions):** 319,795 records
 * **Total Items (Features) Before Encoding:** 18 original columns
 * **Total Items (Features) After Encoding:** 64 total binary items (columns)
 * **Key Items Implemented:** `Discretization of continuous health variables for association rule mining.`, `Construction of a transactional sparse matrix using one-hot encoding`
@@ -57,7 +57,6 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | Github declines too large CSV file for preprocessed data | ✅ Fixed | Removed all large file in commit history then,added the CSV file to gitignore file; Use alternative storage to store the file (i.e., Google Drive) |
 | Generating too many rules / memory limitations with Apriori | ✅ Fixed | Switched to FPGrowth to reduce memory usage; post-filtered itemsets and rules (e.g., removed trivial 1-itemsets, applied Lift $\ge 1.2$) before reporting. |
 | Preprocessing: too many features / high dimensionality | ✅ Fixed | Applied **pruning** during preprocessing by removing irrelevant or redundant columns to reduce dimensionality before mining. |
-| Generating too many rules | ⏳ Planned | Will implement post-filtering, requiring Lift $\ge 1.2$ before final reporting. |
 
 ## 4. Next Steps (Before Final Submission)
 - [✓] Complete final One-Hot Encoding and transactional file creation.

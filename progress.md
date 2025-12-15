@@ -25,7 +25,7 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
     * Discretization (Binning) applied to **BMI, PhysicalHealth, MentalHealth and SleepTime**.
     * Categorical features converted via **Discretization and One-Hot Encoding**.
 
-### Data Preview (Item Frequency)
+### Data Preview (Item Frequency) [MODIFY]
 *Replace the placeholder below with your actual plot image, saved in your repository.*
 ![Item Frequency Bar Chart Placeholder](images/item_frequency.png)
 
@@ -40,7 +40,7 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | **Min Lift**       | 1.0        | 1.2        |
 
 
-**Sample Rule Metrics (Top 5 High-Lift Rules using Parameter Value 1):**
+**Sample Rule Metrics (Top 5 High-Lift Rules):**    [MODIFY]
 | Rule (Antecedent => Consequent) | Support | Confidence | Lift |
 |---------------------------------|---------|------------|------|
 | GenHealth\_Excellent => Diabetic\_No, PhysicalHealth\_cat\_None | 0.177 | 0.846 | 1.372 |
@@ -49,9 +49,9 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | GenHealth\_Excellent => HeartDisease\_No, PhysicalHealth\_cat\_None | 0.181 | 0.868 | 1.309 |
 | GenHealth\_Excellent => Diabetic\_No, MentalHealth\_cat\_None | 0.147 | 0.704 | 1.301 |
 
-**Visualization (Required for Deliverable 3):**
+**Visualization (Required for Deliverable 3):** [MODIFY]
 *Replace the placeholder below with your actual plot image, saved in your repository.*
-![Co-occurrence Heatmap Placeholder](images/co-occurrence_heatmap.png)
+![Co-occurrence Heatmap Placeholder]()
 
 ## 3. Challenges Encountered & Solutions
 | Issue | Status | Resolution |
@@ -64,7 +64,7 @@ This section tracks the metrics used to tune the Apriori algorithm.
 ## 4. Next Steps (Before Final Submission)
 - [✓] Complete final One-Hot Encoding and transactional file creation.
 - [✓] Execute Apriori algorithm and generate initial ruleset.
-- [ ] Calculate all required metrics: Support, Confidence, Lift, Conviction, and Leverage.
+- [✓] Calculate all required metrics: Support, Confidence, Lift, Conviction, and Leverage.
 - [ ] **Critical:** Filter rules to only show those where the consequent is `Outcome: Disease` or `Outcome: No Disease`.
 - [ ] Prepare final visualizations (Rule Network Graph, Heatmaps).
 - [ ] Write complete README.md with metric interpretation and actionable insights.

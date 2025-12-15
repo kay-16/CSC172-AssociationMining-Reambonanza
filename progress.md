@@ -10,24 +10,25 @@ This table tracks the progress through the Association Rule Mining (ARM) pipelin
 | :--- | :--- | :--- |
 | Data Loading & Cleaning | ✅ Completed | Missing values handled (documented in Preprocessing Notebook). |
 | Data Preprocessing | ✅ Completed | Binning/Discretization of numerical features completed for BMI, PhysicalHealth, MentalHealth, and SleepTime columns. |
-| **Transactional Conversion** | ✅ Completed | Final One-Hot Encoding and conversion to sparse matrix format. |
-| **Apriori Execution** | ✅ Completed | Ready to run the algorithm once the transactional file is complete. |
-| Rule Evaluation & Filtering | ⏳ Not Started | Planned to start after generating the initial ruleset. |
+| Transactional Conversion | ✅ Completed | Final One-Hot Encoding and conversion to sparse matrix format. |
+| Apriori Execution | ✅ Completed | Ready to run the algorithm once the transactional file is complete. |
+| Rule Evaluation & Filtering | ✅ On-going | Planned to start after generating the initial ruleset. |
 
 ## 1. Dataset Progress
 * **Source Dataset:** Heart Disease Dataset (Kaggle)
 * **Total Records (Transactions):** 319,795 records
 * **Total Items (Features) Before Encoding:** 18 original columns
-* **Total Items (Features) After Encoding:** 61 total binary items (columns)
+* **Total Items (Features) After Encoding & Data Pruning:** 61 total binary items (columns)
 * **Key Items Implemented:** `Discretization of continuous health variables for association rule mining.`, `Construction of a transactional sparse matrix using one-hot encoding`
 * **Preprocessing Applied:**
     * Missing values imputed/dropped (documented in preprocessing notebook).
     * Discretization (Binning) applied to **BMI, PhysicalHealth, MentalHealth and SleepTime**.
     * Categorical features converted via **Discretization and One-Hot Encoding**.
 
-### Data Preview (Item Frequency) [MODIFY]
-*Replace the placeholder below with your actual plot image, saved in your repository.*
-![Item Frequency Bar Chart Placeholder](images/item_frequency.png)
+### Data Preview
+
+* <p><b>Item Frequency</b></p>
+<img width="600" height="600" alt="item_freq_distribution" src="https://github.com/user-attachments/assets/0f13fa02-07a7-43a1-9ec0-fb17d0758286" />
 
 ## 2. Rule Mining Progress
 This section tracks the metrics used to tune the Apriori algorithm.
@@ -40,18 +41,19 @@ This section tracks the metrics used to tune the Apriori algorithm.
 | **Min Lift**       | 1.0        | 1.2        |
 
 
-**Sample Rule Metrics (Top 5 High-Lift Rules):**    [MODIFY]
-| Rule (Antecedent => Consequent) | Support | Confidence | Lift |
-|---------------------------------|---------|------------|------|
-| GenHealth\_Excellent => Diabetic\_No, PhysicalHealth\_cat\_None | 0.177 | 0.846 | 1.372 |
-| GenHealth\_Excellent => PhysicalActivity\_Yes, PhysicalHealth\_cat\_None | 0.165 | 0.788 | 1.363 |
-| GenHealth\_Excellent => DiffWalking\_No, PhysicalHealth\_cat\_None | 0.182 | 0.871 | 1.324 |
-| GenHealth\_Excellent => HeartDisease\_No, PhysicalHealth\_cat\_None | 0.181 | 0.868 | 1.309 |
-| GenHealth\_Excellent => Diabetic\_No, MentalHealth\_cat\_None | 0.147 | 0.704 | 1.301 |
+**Sample Rule Metrics (Top 5 High-Lift Rules):** 
+| Antecedents                     | Consequents                           | Support  | Confidence | Lift    |
+|---------------------------------|---------------------------------------|---------|------------|--------|
+| (GenHealth_Excellent)           | (PhysicalHealth_cat_None, Diabetic_No) | 0.17692 | 0.84644    | 1.3716 |
+| (GenHealth_Excellent)           | (PhysicalHealth_cat_None, PhysicalActivity_Yes) | 0.16475 | 0.78820 | 1.3628 |
+| (GenHealth_Excellent)           | (PhysicalHealth_cat_None, DiffWalking_No) | 0.18207 | 0.87110 | 1.3241 |
+| (GenHealth_Excellent)           | (HeartDisease_No, PhysicalHealth_cat_None) | 0.18147 | 0.86820 | 1.3086 |
+| (GenHealth_Excellent)           | (MentalHealth_cat_None, Diabetic_No) | 0.14707 | 0.70363 | 1.3015 |
 
-**Visualization (Required for Deliverable 3):** [MODIFY]
-*Replace the placeholder below with your actual plot image, saved in your repository.*
-![Co-occurrence Heatmap Placeholder]()
+
+**Visualization:**
+* <p><b>Co-occurrence matrix for features that appear together frequently</b></p>
+<img width="800" height="600" alt="co_occurrence_heatmaps" src="https://github.com/user-attachments/assets/ce9af723-7be2-42b2-a1df-f9b4b375ddce" />
 
 ## 3. Challenges Encountered & Solutions
 | Issue | Status | Resolution |
@@ -66,6 +68,6 @@ This section tracks the metrics used to tune the Apriori algorithm.
 - [✓] Execute Apriori algorithm and generate initial ruleset.
 - [✓] Calculate all required metrics: Support, Confidence, Lift, Conviction, and Leverage.
 - [ ] **Critical:** Filter rules to only show those where the consequent is `Outcome: Disease` or `Outcome: No Disease`.
-- [ ] Prepare final visualizations (Rule Network Graph, Heatmaps).
+- [✓] Prepare final visualizations (Rule Network Graph, Heatmaps).
 - [ ] Write complete README.md with metric interpretation and actionable insights.
 - [ ] Record the 5-min demonstration video.

@@ -38,52 +38,127 @@ Therefore, this project addresses this challenge by employing Association Rule M
 - [Gap: Your unique approach, e.g., Mindanao-specific waste classes] [web:25]
 
 ## Methodology
-### Dataset
-- Source: [e.g., Custom 5K images + COCO subset]
-- Split: 70/15/15 train/val/test
-- Preprocessing: Augmentation, resizing to 640x640 [web:41]
+### Dataset Overview
+- Source: Heart Disease Dataset (Kaggle)
+    * Link: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease/
+
+- Original Features: 18 health-related attributes
+- Post-Processing Features: 61 binary items after encoding and pruning
+- The dataset is **highly imbalanced**, with the majority of individuals labeled as HeartDisease = No.
+
+### Preprocessing & Transformations
+Applied Preprocessing Steps
+- Missing values were handled via **imputation/removal**, as documented in the preprocessing notebook
+
+- **Discretization (binning)** was applied to continuous variables:
+    * BMI
+    * PhysicalHealth
+    * MentalHealth
+    * SleepTime
+
+- Categorical features were transformed using:
+    * Discretization
+    * One-Hot Encoding
+
+- Resulting Dataset
+    * The final dataset contains entirely of **binary features**, making it applicable for transactional association rule mining.
+
+### Algorithm & Parameters
+- Algorithm used:
+    * FP-Growth: chosen for scalability on large datasets
+
+- Key Parameters:
+    * `min_support = 0.1`
+    * `max_len = 3`
+These parameters prioritise **frequent and statistically stable patterns**, reducing noise but potentially excluding rare disease-specific combinations.
 
 ### Architecture
-![Model Diagram](images/architecture.png)
-- Backbone: [e.g., CSPDarknet53]
-- Head: [e.g., YOLO detection layers]
-- Hyperparameters: Table below
+| Step | Action | Description |
+| :---: | :--- | :--- |
+| 1 | Input Data | Raw patient records from the CDC BRFSS heart disease dataset (Kaggle). |
+| 2 | Preprocessing | Discretization and one-hot encoding (e.g., AgeCategory, BMI into Obese/Non-Obese, SleepTime into Short/Normal/Long) |
+| 3 | Transactional Data | Output: Sparse DataFrame (each column is a specific medical feature/risk level). |
+| 4 | Apriori Algorithm | Find Frequent Itemsets using a tuned minimum Support threshold. |
+| 5 | Rule Generation | Generate rules (A $\implies$ B) based on a minimum Confidence threshold. |
+| 6 | Evaluation & Filtering | Calculate Lift, Conviction, and Leverage. Filter for rules where Lift $>$ 1.0 (positive correlation). |
+| 7 | Final Output | Ranked list of comorbidity rules, network graph visualization, item frequency bar charts, transaction length distribution, and co-occurrence heatmap |
 
-| Parameter | Value |
-|-----------|-------|
-| Batch Size | 16 |
-| Learning Rate | 0.01 |
-| Epochs | 100 |
-| Optimizer | SGD |
+### Frequent Itemset Filtering
+- To remove trivial patterns, only itemsets consisiting more than one item were retained:
 
-### Training Code Snippet
-train.py excerpt
-model = YOLO('yolov8n.pt')
-model.train(data='dataset.yaml', epochs=100, imgsz=640)
+```python
+freq_itemsets[
+    freq_itemsets['itemsets'].apply(lambda x: len(x) > 1)
+].sort_values(by='support', ascending=False)
+```
+This ensures analysis focuses on **interactions between conditions**, not single-variable dominance
 
+### Association Rule Generation
+**Rule Generation Criteria**
+- Metric: **Confidence**
+- Minimum Confidence Threshold: `0.7`
+- Rules sorted by **Lift**
+- Strong rules filtered using:
+    * `life ≥ 1.2`
 
-## Experiments & Results
-### Metrics
-| Model | mAP@0.5 | Precision | Recall | Inference Time (ms) |
-|-------|---------|-----------|--------|---------------------|
-| Baseline (YOLOv8n) | 85% | 0.87 | 0.82 | 12 |
-| **Ours (Fine-tuned)** | **92%** | **0.94** | **0.89** | **15** |
+```python
+rules = association_rules(freq_itemsets, metric='confidence', min_threshold=0.7)
+strong_rules = rules[rules['lift'] >= 1.2]
+```
+**Focus on Heart Disease Outcome**
+- Rules containing HeartDisease in the consequent were extracted to analyse outcome-related associations.
 
-![Training Curve](images/loss_accuracy.png)
+## Key Experimental Findings & Discussions
+1. **Dominant Rule Patterns**
+The strongest discovered rules consistently describe **protective health patterns**, such as:
+- Excellent general health ⇒ No heart disease
+- Excellent general health ⇒ No physical or mental health issues
+- Excellent general health ⇒ Physical activity participation
 
-### Demo
+Individuals reporting excellent general health are significantly more likely to be free from heart disease and related health issues, with confidence values exceeding 85% and lift values above 1.2.
+
+2. **Why Risk-Factor Rules Were Limited**
+An expected pattern such as: 
+- {Smoking_Yes, Obese, Diabetes_Yes} ⇒ {HeartDisease_Yes}
+was **not strongly represented** in the final rule set.
+
+Explanation:
+- The dataset is **heavily skewed toward health individuals**
+![distribution of heart disease in raw dataset](image.png)
+- Heart disease positive cases are relatively rare
+- FP-Growth with `min_support = 0.1` naturally prunes:
+    * Rare but clinically meaningful disease combinations
+
+This highlights a known limitation of frequent itemset mining applied to **imbalanced medical datasets**.
+
+3. Metric Interpretation
+
+| Metric | Meaning in this Study | 
+| :---: | :--- |
+| Support | Frequency of health patterns in the population | 
+| Confidence | Likelihood of result given the antecedent | 
+| Lift | Strength of association beyond random chance | 
+
+- High lift values (>1.2) confirm that discovered patterns are **non-random and meaningful**, even when predicting disease absence.
+
+4. Actionable Insights
+- Strong rules consistently highlight **preventive health factors**, emphasizing the role of:
+    * Self-reported general health
+    * Physical activity
+    * Absence of physical and mental health issues
+
+- The findings reinforce public health perpectives that overall wellness indicators greatly correlate with the likelihood of having any heart disease.
+
+5. **Limitations**
+- Class imbalance limits discovery of rare disease-specific rules
+
+- High minimum support leans towards dominant population patterns
+
+- The association rule mining captures correlation, not causation
+
+## Demo
 ![Detection Demo](demo/detection.gif)
 [Video: [CSC173_YourLastName_Final.mp4](demo/CSC173_YourLastName_Final.mp4)] [web:41]
-
-## Discussion
-- Strengths: [e.g., Handles occluded trash well]
-- Limitations: [e.g., Low-light performance]
-- Insights: [e.g., Data augmentation boosted +7% mAP] [web:25]
-
-## Ethical Considerations
-- Bias: Dataset skewed toward plastic/metal; rural waste underrepresented
-- Privacy: No faces in training data
-- Misuse: Potential for surveillance if repurposed [web:41]
 
 ## Conclusion
 [Key achievements and 2-3 future directions, e.g., Deploy to Raspberry Pi for IoT.]

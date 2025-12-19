@@ -21,12 +21,14 @@
 
 ## Introduction
 ### Problem Statement
-[Describe the real-world vision problem and why it matters locally (e.g., IoT waste systems in Iligan).]
+According to the World Health Organisation (WHO), cardiovascular diseases (CVDs) are the leading cause of death worldwide; in fact, an estimated 19.8 million (~32%) people died from CVD in 2022 alone. However, risk factors rarely occur independently, and their combined presence could intensify the overall risk. Healthcare systems frequently depend on traditional statistical models that concentrate on single predictors instead of explicit, quantitative modelling of various and complex interactions. 
+
+Therefore, this project addresses this challenge by employing Association Rule Mining (ARM) and investigate hidden rules (comorbidities) that relates to combinations of symptoms and risk factors (e.g., AgeCategory, BMI, SleepTime) relating to heart disease. The resulting rules will then represent as a data-driven tool to aid medical experts determine high-risk patient profiles and patient-specific treatment plans.
 
 ### Objectives
-- [Objective 1: e.g., Achieve >90% detection accuracy]
-- [Objective 2: Integrate with decision logic]
-- [Objective 3: Deploy on edge device]
+- Objective 1: Implement the Apriori Algorithm to effectively determine frequent itemsets and generate strong association rules for comorbidity patterns.
+
+- Objective 2: Implement complete association rule mining including data preprocessing, frequent itemset mining, rule generation, parameter tuning, and evaluation.
 
 ![Problem Demo](images/problem_example.gif) [web:41]
 

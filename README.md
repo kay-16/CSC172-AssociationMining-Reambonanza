@@ -6,7 +6,10 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://python.org) [![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)](https://pytorch.org)
 
 ## Abstract
-[150-250 words: Summarize problem (e.g., "Urban waste sorting in Mindanao"), dataset, deep CV method (e.g., YOLOv8 fine-tuned on custom trash images), key results (e.g., 92% mAP), and contributions.][web:25][web:41]
+Understanding comorbidity patterns associated with heart disease is essential for population-level health analysis and preventive decision-making. This project employs association rule mining to determine meaningful relationships between health conditions, lifestyle factors, and heart disease outcomes using a large-scale public health dataset. The Heart Disease Dataset from Kaggle, consisting of 319,795 records and 18 original features, was used for this project. After preprocessing, including handling missing values,  discretization of continuous variables, specifically, BMI, physical health, mental health, and sleep time, one-hot encoding, and data pruning, the dataset was transformed into 61 binary items suitable for transactional analysis.
+For scalability on large datasets, FP-Growth was utilised to determine frequent itemset mining was conducted with a minimum support threshold of 0.1 and a maximum itemset length of three. Association rules were generated using confidence-based filtering and evaluated using support, confidence, and lift metrics, with strong rules defined by confidence ≥ 0.7 and lift ≥ 1.2. The results reveal dominant patterns associated with positive health indicators, such as excellent general health, physical activity, and absence of physical or mental health issues, which strongly correlate with the absence of heart disease. However, due to significant class imbalance favoring healthy individuals, risk-factor-driven rules predicting heart disease presence were limited.
+This project demonstrates a complete and reproducible association rule mining pipeline for large-scale health data, highlights the impact of dataset imbalance on unsupervised pattern discovery, and provides interpretable insights into population-level health associations.
+
 
 ## Table of Contents
 - [Introduction](#introduction)

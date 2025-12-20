@@ -72,6 +72,9 @@ Applied Preprocessing Steps
 These parameters prioritise **frequent and statistically stable patterns**, reducing noise but potentially excluding rare disease-specific combinations.
 
 ### Architecture
+**Architecture Design**
+<img width="1000" height="1000" alt="archictecture diagram" src="https://github.com/user-attachments/assets/208a1009-1214-4403-b435-7c06338566ca" />
+
 | Step | Action | Description |
 | :---: | :--- | :--- |
 | 1 | Input Data | Raw patient records from the CDC BRFSS heart disease dataset (Kaggle). |

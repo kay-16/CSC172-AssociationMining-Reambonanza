@@ -30,8 +30,6 @@ Therefore, this project addresses this challenge by employing Association Rule M
 
 - Objective 2: Implement complete association rule mining including data preprocessing, frequent itemset mining, rule generation, parameter tuning, and evaluation.
 
-![Problem Demo](images/problem_example.gif) [web:41]
-
 ## Related Work
 - [Paper 1: YOLOv8 for real-time detection [1]]
 - [Paper 2: Transfer learning on custom datasets [2]]
@@ -151,9 +149,7 @@ This highlights a known limitation of frequent itemset mining applied to **imbal
 
 5. **Limitations**
 - Class imbalance limits discovery of rare disease-specific rules
-
 - High minimum support leans towards dominant population patterns
-
 - The association rule mining captures correlation, not causation
 
 ## Demo

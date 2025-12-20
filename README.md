@@ -68,6 +68,7 @@ Applied Preprocessing Steps
 - Key Parameters:
     * `min_support = 0.1`
     * `max_len = 3`
+
 These parameters prioritise **frequent and statistically stable patterns**, reducing noise but potentially excluding rare disease-specific combinations.
 
 ### Architecture
@@ -121,8 +122,9 @@ An expected pattern such as:
 was **not strongly represented** in the final rule set.
 
 Explanation:
-- The dataset is **heavily skewed toward health individuals**
-![distribution of heart disease in raw dataset](image.png)
+- The raw dataset is **heavily skewed toward health individuals**. For example, majority of the people have no heart disease compared to the few numbers of people with heart disease.
+<img width="500" height="500" alt="output" src="https://github.com/user-attachments/assets/d3158185-0643-46ae-b2d6-f81a387892c7" />
+
 - Heart disease positive cases are relatively rare
 - FP-Growth with `min_support = 0.1` naturally prunes:
     * Rare but clinically meaningful disease combinations

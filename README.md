@@ -46,7 +46,7 @@ Therefore, this project addresses this challenge by employing Association Rule M
 
 - Original Features: 18 health-related attributes
 - Post-Processing Features: 61 binary items after encoding and pruning
-- The dataset is **highly imbalanced**, with the majority of individuals labeled as HeartDisease = No.
+- The dataset is **highly imbalanced**, with the majority of individuals labeled as `HeartDisease = No`
 
 ### Preprocessing & Transformations
 Applied Preprocessing Steps

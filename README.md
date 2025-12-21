@@ -18,8 +18,7 @@ This project demonstrates a complete and reproducible association rule mining pi
 - [Introduction](#introduction)
 - [Related Work](#related-work)
 - [Methodology](#methodology)
-- [Experiments & Results](#experiments--results)
-- [Discussion](#discussion)
+- [Experimental Findings & Discussions](#experimental-findings-&-discussions)
 - [Ethical Considerations](#ethical-considerations)
 - [Conclusion](#conclusion)
 - [Installation](#installation)
@@ -115,7 +114,7 @@ strong_rules = rules[rules['lift'] >= 1.2]
 **Focus on Heart Disease Outcome**
 - Rules containing HeartDisease in the consequent were extracted to analyse outcome-related associations.
 
-## Key Experimental Findings & Discussions
+## Experimental Findings & Discussions
 1. **Dominant Rule Patterns**
 The strongest discovered rules consistently describe **protective health patterns**, such as:
 - Excellent general health ⇒ No heart disease
@@ -167,12 +166,14 @@ This highlights a known limitation of frequent itemset mining applied to **imbal
 [Video: [CSC173_YourLastName_Final.mp4](demo/CSC173_YourLastName_Final.mp4)] [web:41]
 
 ## Conclusion
-[Key achievements and 2-3 future directions, e.g., Deploy to Raspberry Pi for IoT.]
+This project successfully applied association rule mining using the FP-Growth algorithm to identify meaningful relationships within the dataset. Through effective data preprocessing and pruning, the model reduced complexity while preserving relevant and interpretable rules. The generated association rules revealed frequent co-occurring attributes, demonstrating the value of association mining in extracting actionable insights from a large dataset. 
+
+Possible future directions relating to this project would to combining association rules with classification or recommendation models to support more advanced implementations. Additionally, further approach includes employing incremental association mining that may allow efficient managing of continuously growing data. Deploying on a lightweight platforms like Raspberry Pi may allow real-time association mining for Iot applications.
 
 ## Installation
 1. Clone repo: `git clone https://github.com/yourusername/CSC173-DeepCV-YourLastName`
 2. Install deps: `pip install -r requirements.txt`
-3. Download weights: See `models/` or run `download_weights.sh` [web:22][web:25]
+3. Download weights: See `models/` or run `download_weights.sh`
 
 **requirements.txt:**
 torch>=2.0
@@ -185,6 +186,10 @@ albumentations
 
 [2]  <div class="csl-entry">González-Gay, M. A., &#38; González-Juanatey, C. (2016). 
 Cardiovascular risk factor assessment: still an unmet need in chronic inflammatory diseases. <i>Heart</i>, <i>102</i>(24), 1937–1939. https://doi.org/10.1136/HEARTJNL-2016-310292</div>
+
+[3] World Health Organization (WHO), 2025. From: https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)
+
+[4] Indicators of Heart Disease (2022 UPDATE) From: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease/
 
 ## GitHub Pages
 View this project site: [https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/](https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/) [web:32]

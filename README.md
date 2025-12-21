@@ -6,10 +6,13 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://python.org) [![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)](https://pytorch.org)
 
 ## Abstract
-Understanding comorbidity patterns associated with heart disease is essential for population-level health analysis and preventive decision-making. This project employs association rule mining to determine meaningful relationships between health conditions, lifestyle factors, and heart disease outcomes using a large-scale public health dataset. The Heart Disease Dataset from Kaggle, consisting of 319,795 records and 18 original features, was used for this project. After preprocessing, including handling missing values,  discretization of continuous variables, specifically, BMI, physical health, mental health, and sleep time, one-hot encoding, and data pruning, the dataset was transformed into 61 binary items suitable for transactional analysis.
-For scalability on large datasets, FP-Growth was utilised to determine frequent itemset mining was conducted with a minimum support threshold of 0.1 and a maximum itemset length of three. Association rules were generated using confidence-based filtering and evaluated using support, confidence, and lift metrics, with strong rules defined by confidence ≥ 0.7 and lift ≥ 1.2. The results reveal dominant patterns associated with positive health indicators, such as excellent general health, physical activity, and absence of physical or mental health issues, which strongly correlate with the absence of heart disease. However, due to significant class imbalance favoring healthy individuals, risk-factor-driven rules predicting heart disease presence were limited.
-This project demonstrates a complete and reproducible association rule mining pipeline for large-scale health data, highlights the impact of dataset imbalance on unsupervised pattern discovery, and provides interpretable insights into population-level health associations.
+Understanding comorbidity patterns associated with heart disease is essential for population-level health analysis and preventive decision-making. Cardiovascular disease, specifically diabetes and hypertension, contributes to the complication of risk factor evaluation and management because of interconnected pathophysiological mechanisms. Managing these conditions effectively requiress a combination of medication-based treatments with lifestyle changes to mitigate the increased cardiovascular risk (Mwende, 2024). Moreover, cardiovascular risk factors among patients with chronic diseases are often not adequately investigated and evaluated, leading in poor management (González-Gay & González-Juanatey, 2016).
 
+Hence, this project employs association rule mining to determine meaningful relationships between health conditions, lifestyle factors, and heart disease outcomes using a large-scale public health dataset. The Heart Disease Dataset from Kaggle, consisting of 319,795 records and 18 original features, was used for this project. After preprocessing, including handling missing values,  discretization of continuous variables, specifically, BMI, physical health, mental health, and sleep time, one-hot encoding, and data pruning, the dataset was transformed into 61 binary items suitable for transactional analysis.
+
+For scalability on large datasets, FP-Growth was utilised to determine frequent itemset mining was conducted with a minimum support threshold of 0.1 and a maximum itemset length of three. Association rules were generated using confidence-based filtering and evaluated using support, confidence, and lift metrics, with strong rules defined by confidence ≥ 0.7 and lift ≥ 1.2. The results reveal dominant patterns associated with positive health indicators, such as excellent general health, physical activity, and absence of physical or mental health issues, which strongly correlate with the absence of heart disease. However, due to significant class imbalance favoring healthy individuals, risk-factor-driven rules predicting heart disease presence were limited.
+
+This project demonstrates a complete and reproducible association rule mining pipeline for large-scale health data, highlights the impact of dataset imbalance on unsupervised pattern discovery, and provides interpretable insights into population-level health associations.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -30,7 +33,6 @@ Therefore, this project addresses this challenge by employing Association Rule M
 
 ### Objectives
 - Objective 1: Implement the Apriori Algorithm to effectively determine frequent itemsets and generate strong association rules for comorbidity patterns.
-
 - Objective 2: Implement complete association rule mining including data preprocessing, frequent itemset mining, rule generation, parameter tuning, and evaluation.
 
 ## Related Work
@@ -179,8 +181,10 @@ opencv-python
 albumentations
 
 ## References
-[1] Jocher, G., et al. "YOLOv8," Ultralytics, 2023.  
-[2] Deng, J., et al. "ImageNet: A large-scale hierarchical image database," CVPR, 2009. [web:25]
+[1]   <div class="csl-entry">Mwende, W. G. (2024). Cardiovascular Risk in Patients with Coexisting Diabetes and Hypertension: A Comprehensive Review. <i>IDOSR Journal of Applied Sciences</i>, <i>9</i>(3), 53–57. https://doi.org/10.59298/idosrjas/2024/9.3.535700</div>
+
+[2]  <div class="csl-entry">González-Gay, M. A., &#38; González-Juanatey, C. (2016). 
+Cardiovascular risk factor assessment: still an unmet need in chronic inflammatory diseases. <i>Heart</i>, <i>102</i>(24), 1937–1939. https://doi.org/10.1136/HEARTJNL-2016-310292</div>
 
 ## GitHub Pages
 View this project site: [https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/](https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/) [web:32]

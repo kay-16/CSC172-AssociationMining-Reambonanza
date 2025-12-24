@@ -165,7 +165,7 @@ This highlights a known limitation of frequent itemset mining applied to **imbal
 [Video: [CSC173_YourLastName_Final.mp4](demo/CSC173_YourLastName_Final.mp4)] [web:41]
 
 ## Conclusion
-[Key achievements and 2-3 future directions, e.g., Deploy to Raspberry Pi for IoT.]
+
 
 ## Installation
 1. Clone repo: `git clone https://github.com/yourusername/CSC173-DeepCV-YourLastName`

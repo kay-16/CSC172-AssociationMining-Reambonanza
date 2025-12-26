@@ -35,7 +35,7 @@ Therefore, this project addresses this challenge by employing Association Rule M
 ## Related Work
 - Lindgren, P. (2022). <i>Clustering and Association Rule Mining of Cardiovascular Disease Risk Factors</i> 
 
-- Budiharto, W. (2023). <i>Cardiovascular Disease Analysis Using Correlational Analysis and Association Rules Mining for In-depth Analysis to Identify Predominant Variables</i>. https://doi.org/10.1109/ICCoSITE57641.2023.10127722
+- Budiharto, W. (2023). <i>Cardiovascular Disease Analysis Using Correlational Analysis and Association Rules Mining for In-depth Analysis to Identify Predominant Variables</i>
 
 - Gap:  
     * Algorithm Selection -  FP-Growth is often more efficient for large datasets because it avoids the candidate generation step of Apriori, making it a faster and scalable approach
@@ -175,7 +175,7 @@ This project successfully applied association rule mining using the FP-Growth al
 Possible future directions relating to this project would to combining association rules with classification or recommendation models to support more advanced implementations. Additionally, further approach includes employing incremental association mining that may allow efficient managing of continuously growing data. Deploying on a lightweight platforms like Raspberry Pi may allow real-time association mining for Iot applications.
 
 ## Installation
-1. Clone repo: `git clone https://github.com/yourusername/CSC173-DeepCV-YourLastName`
+1. Clone repo: `git clone https://github.com/kay-16/CSC172-AssociationMining-Reambonanza.git`
 2. Install deps: `pip install -r requirements.txt`
 3. Download weights: See `models/` or run `download_weights.sh`
 

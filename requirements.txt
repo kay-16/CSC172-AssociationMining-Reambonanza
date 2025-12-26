@@ -1,0 +1,8 @@
+# Core data handling and manipulation
+pandas
+numpy
+scikit-learn
+
+# Association Rule Mining (choose one, or include both if uncertain)
+mlxtend
+# apyori

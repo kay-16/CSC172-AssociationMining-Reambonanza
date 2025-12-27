@@ -166,8 +166,7 @@ This highlights a known limitation of frequent itemset mining applied to **imbal
 - The association rule mining captures correlation, not causation
 
 ## Demo
-![Detection Demo](demo/detection.gif)
-[Video: [CSC173_YourLastName_Final.mp4](demo/CSC173_YourLastName_Final.mp4)] [web:41]
+Video: https://drive.google.com/drive/folders/1wJVxsDPsn3EGQ_1D2dcq3RS-Y3ZIq98Z?usp=sharing [web:41]
 
 ## Conclusion
 This project successfully applied association rule mining using the FP-Growth algorithm to identify meaningful relationships within the dataset. Through effective data preprocessing and pruning, the model reduced complexity while preserving relevant and interpretable rules. The generated association rules revealed frequent co-occurring attributes, demonstrating the value of association mining in extracting actionable insights from a large dataset. 
@@ -177,13 +176,13 @@ Possible future directions relating to this project would to combining associati
 ## Installation
 1. Clone repo: `git clone https://github.com/kay-16/CSC172-AssociationMining-Reambonanza.git`
 2. Install deps: `pip install -r requirements.txt`
-3. Download weights: See `models/` or run `download_weights.sh`
+3. Download weights: Run `download_weights.sh`
 
 **requirements.txt:**
-torch>=2.0
-ultralytics
-opencv-python
-albumentations
+pandas
+numpy
+scikit-learn
+mlxtend
 
 ## References
 [1] World Health Organization (WHO), 2025. From: https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)

@@ -166,7 +166,7 @@ This highlights a known limitation of frequent itemset mining applied to **imbal
 - The association rule mining captures correlation, not causation
 
 ## Demo
-Video: https://drive.google.com/drive/folders/1wJVxsDPsn3EGQ_1D2dcq3RS-Y3ZIq98Z?usp=sharing [web:41]
+Video: https://drive.google.com/drive/folders/1wJVxsDPsn3EGQ_1D2dcq3RS-Y3ZIq98Z?usp=sharing
 
 ## Conclusion
 This project successfully applied association rule mining using the FP-Growth algorithm to identify meaningful relationships within the dataset. Through effective data preprocessing and pruning, the model reduced complexity while preserving relevant and interpretable rules. The generated association rules revealed frequent co-occurring attributes, demonstrating the value of association mining in extracting actionable insights from a large dataset. 
@@ -194,4 +194,4 @@ mlxtend
 [4] <div class="csl-entry">Siswanto, B., Soeparno, H., Sianipar, N. F., &#38; Budiharto, W. (2023). <i>Cardiovascular Disease Analysis Using Correlational Analysis and Association Rules Mining for In-depth Analysis to Identify Predominant Variables</i>. 697–702. https://doi.org/10.1109/ICCoSITE57641.2023.10127722</div>
 
 ## GitHub Pages
-View this project site: [https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/](https://jjmmontemayor.github.io/CSC173-DeepCV-Montemayor/) [web:32]
+View this project site: https://kay-16.github.io/CSC172-AssociationMining-Reambonanza/

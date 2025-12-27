@@ -1,2 +1,0 @@
-heart_disease_associationmining/data/heart_disease_preprocessed.csv filter=lfs diff=lfs merge=lfs -text
-*.csv filter=lfs diff=lfs merge=lfs -text
